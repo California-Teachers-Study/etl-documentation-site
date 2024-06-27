@@ -1,0 +1,80 @@
+# RStudio Setup
+
+This section will describe how to set up RStudio for development.
+
+## Connecting to data in s3
+
+To connect from a local RStudio installation to s3 buckets, you need to:
+
+1.  Install AWS cli. Instructions can be found [here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+2.  Configure AWS sts single sign-on (SSO). Instructions can be found [here](https://docs.aws.amazon.com/cli/latest/userguide/sso-configure-profile-token.html#sso-configure-profile-token-auto-sso).
+3.  Open a terminal window and type "aws sso login"\--a browser window should open to allow you to log in to AWS.
+
+::: {.callout-note appearance="simple"}
+**You will need to follow step 3 and log in each time the session has expired.**
+:::
+
+The [paws](https://github.com/paws-r/paws) package can be used for bringing data from s3 into your R environment. Another option is the aws.s3 package, which is not explored here.
+
+The below code is an example of bringing data from an s3 bucket into RStudio for development.
+
+```{r}
+#| eval: false
+# install paws if not already installed
+install.packages(paws)
+
+# load packages
+library(paws)
+library(tidyverse)
+library(magrittr)
+
+# create s3 frame to use paws package
+s3 <- paws::s3()
+
+# list buckets
+s3$list_buckets()
+
+# list objects in a bucket
+viewobs <- s3$list_objects(Bucket = "your-bucket-name")
+
+# set variables for file you'd like to read in
+bucket_name = "your-bucket-name"
+file_name = "your-file-name.csv"
+
+# download the file and store the output in a variable
+s3_download <- s3$get_object(
+  Bucket = bucket_name,
+  Key = file_name
+)
+
+# Two options for consuming the data in RStudio
+
+## Option 1 - save to local directory in RStudio
+
+# read the CSV in from disk and write it to the current directory
+file_name_save <- "s3_download.csv"
+writeBin(s3_download$Body, con = file_name_save)
+
+# read in as csv
+file_in <- read.csv(file_name_save)
+
+# code to remove file if undesired to keep locally
+file.remove(file_name_save)
+
+## Option 2 - read in the CSV directly from S3 - this requires magrittr package
+require(magrittr)
+
+# read in without writing to disk
+file_in <- s3_download$Body %>%
+  rawToChar %>%
+  read.csv(text = .)
+
+# another example - writing to data frame, using read_csv and reading all cols as char
+file_in <- s3_download$Body %>%
+  rawToChar %>%
+  read_csv(col_types = cols(.default = "c"))
+```
+
+## Using Git and GitHub
+
+Follow the instructions [here](https://sites.northwestern.edu/researchcomputing/resources/using-git-and-github-with-r-rstudio/) to set up Git and GitHub. As described in these instructions, using [R Studio Projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects) makes working with Git and GitHub easier.

@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "California Teachers Study ETL Methodology",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book for documenting the CTS’ ETL methodology. This book is currently under development.\nTo learn more about Quarto books visit https://quarto.org/docs/books."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\nCode\n1 + 1\n\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "rsetup.html#connecting-to-data-in-s3",
+    "href": "rsetup.html#connecting-to-data-in-s3",
+    "title": "2  RStudio Setup",
+    "section": "2.1 Connecting to data in s3",
+    "text": "2.1 Connecting to data in s3\nTo connect from a local RStudio installation to s3 buckets, you need to:\n\nInstall AWS cli. Instructions can be found here.\nConfigure AWS sts single sign-on (SSO). Instructions can be found here.\nOpen a terminal window and type “aws sso login”--a browser window should open to allow you to log in to AWS.\n\n\n\n\n\n\n\nYou will need to follow step 3 and log in each time the session has expired.\n\n\n\nThe paws package can be used for bringing data from s3 into your R environment. Another option is the aws.s3 package, which is not explored here.\nThe below code is an example of bringing data from an s3 bucket into RStudio for development.\n\n\nCode\n# install paws if not already installed\ninstall.packages(paws)\n\n# load packages\nlibrary(paws)\nlibrary(tidyverse)\nlibrary(magrittr)\n\n# create s3 frame to use paws package\ns3 &lt;- paws::s3()\n\n# list buckets\ns3$list_buckets()\n\n# list objects in a bucket\nviewobs &lt;- s3$list_objects(Bucket = \"your-bucket-name\")\n\n# set variables for file you'd like to read in\nbucket_name = \"your-bucket-name\"\nfile_name = \"your-file-name.csv\"\n\n# download the file and store the output in a variable\ns3_download &lt;- s3$get_object(\n  Bucket = bucket_name,\n  Key = file_name\n)\n\n# Two options for consuming the data in RStudio\n\n## Option 1 - save to local directory in RStudio\n\n# read the CSV in from disk and write it to the current directory\nfile_name_save &lt;- \"s3_download.csv\"\nwriteBin(s3_download$Body, con = file_name_save)\n\n# read in as csv\nfile_in &lt;- read.csv(file_name_save)\n\n# code to remove file if undesired to keep locally\nfile.remove(file_name_save)\n\n## Option 2 - read in the CSV directly from S3 - this requires magrittr package\nrequire(magrittr)\n\n# read in without writing to disk\nfile_in &lt;- s3_download$Body %&gt;%\n  rawToChar %&gt;%\n  read.csv(text = .)\n\n# another example - writing to data frame, using read_csv and reading all cols as char\nfile_in &lt;- s3_download$Body %&gt;%\n  rawToChar %&gt;%\n  read_csv(col_types = cols(.default = \"c\"))"
+  },
+  {
+    "objectID": "rsetup.html#using-git-and-github",
+    "href": "rsetup.html#using-git-and-github",
+    "title": "2  RStudio Setup",
+    "section": "2.2 Using Git and GitHub",
+    "text": "2.2 Using Git and GitHub\nFollow the instructions here to set up Git and GitHub. As described in these instructions, using R Studio Projects makes working with Git and GitHub easier."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  }
+]

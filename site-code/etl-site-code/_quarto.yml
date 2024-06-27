@@ -1,0 +1,27 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "California Teachers Study ETL Methodology"
+  author: "Emma Spielfogel"
+  date: today
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - rsetup.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    code-overflow: wrap
+    number-depth: 3
+    code-fold: show
+  pdf:
+    documentclass: scrreprt
+    number-depth: 3
+
+editor: visual
