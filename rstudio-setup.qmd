@@ -1,0 +1,50 @@
+---
+title: "RStudio Setup"
+author: "Emma Spielfogel"
+date: "June 18, 2024"
+date-modified: last-modified
+---
+
+Purpose: This section will describe how to set up RStudio for development.
+
+## Using Git and GitHub
+
+Follow the instructions [here](https://sites.northwestern.edu/researchcomputing/resources/using-git-and-github-with-r-rstudio/) to set up Git and GitHub. As described in these instructions, using [R Studio Projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects) makes working with Git and GitHub easier.
+
+## Git for Command Line
+
+### To clone a repository from GitHub to your RStudio session:
+
+-   Copy the link from the GitHub repository you would like to clone
+    -   ~Click the green "Code" button to see the link~
+-   Go the Terminal tab in RStudio
+-   Make sure you are at the location you want to clone to---if not, change your directory using cd
+-   git clone "URL of repository from GitHub"
+
+### To add new files to a git repo then push to GitHub:
+
+-   Go the Terminal tab in RStudio
+-   Open the repository file path if you are not already in the project (use cd in the Terminal to change your directory)
+-   git pull
+    -   ~This will pull the repository your current location in order to ensure you are using the most up-to-date version. This is especially important when working with collaborators who may have made changes since you last pulled or cloned the repository.~
+-   git status
+    -   ~This allows you to check the status---doing this often is a good check.~
+-   git add + file name
+    -   ~This adds files to git (not GitHub).~
+    -   ~git add -u adds anything that is tracked but has changed (the u stands for updated)~
+-   git status
+    -   ~Checking the status again here can be helpful to double-check you have added all files and folders you would like to.~
+-   git commit -m "Commit message"
+    -   ~This commits the changes you have made. Everything is easily reversible **until this step.** Once committed, changes are part of the history.~
+-   git push
+    -   ~This pushes the committed changes to GitHub.~
+
+::: {.callout-note appearance="simple"}
+**If you have messed up the branches, you can revert (do with mega caution):**
+:::
+
+-   git reset --hard {insert commit ID}
+-   git log
+-   git status
+-   git push -f
+-   git status

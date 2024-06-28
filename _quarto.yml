@@ -3,13 +3,16 @@ project:
   output-dir: docs
 
 book:
-  title: "California Teachers Study ETL Methodology"
+  title: "CTS ETL Methodology"
+  favicon: "/media/Aplus_A_only_blue.png"
   author: "Emma Spielfogel"
   date: today
+  navbar:
+    logo: "/media/Aplus_A_only_blue.png"
   chapters:
     - index.qmd
-    - intro.qmd
-    - rsetup.qmd
+    - rstudio-setup.qmd
+    - oracle-setup.qmd
     - references.qmd
 
 bibliography: references.bib
