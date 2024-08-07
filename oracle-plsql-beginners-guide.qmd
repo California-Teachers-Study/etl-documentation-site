@@ -5,8 +5,6 @@ date: "August 6, 2024"
 date-modified: last-modified
 ---
 
-# Oracle PL/SQL Beginner's Programming Guide
-
 Oracle is CaSe sensitive! Values stored in the database must be matched exactly. The exception to this is Oracle object names. All objects are stored in upper case, but can be referenced in lower, mixed, or upper case.
 
 ## Common Commands

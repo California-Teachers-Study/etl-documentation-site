@@ -1,5 +1,5 @@
 ---
-title: "Updating this Quarto Site"
+title: "Updating This Quarto Site"
 author: "Emma Spielfogel"
 date: "June 18, 2024"
 date-modified: last-modified

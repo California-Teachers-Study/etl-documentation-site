@@ -5,7 +5,7 @@ project:
 book:
   title: "CTS ETL Methodology"
   favicon: "/media/Aplus_A_only_blue.png"
-  author: "Emma Spielfogel"
+  author: "Emma Spielfogel, Jerry Gray"
   date: today
   navbar:
     logo: "/media/Aplus_A_only_blue.png"

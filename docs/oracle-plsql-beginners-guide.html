@@ -154,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./updating-this-site.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Updating this Quarto Site</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Updating This Quarto Site</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -191,15 +191,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#oracle-plsql-beginners-programming-guide" id="toc-oracle-plsql-beginners-programming-guide" class="nav-link active" data-scroll-target="#oracle-plsql-beginners-programming-guide"><span class="header-section-number">4</span> Oracle PL/SQL Beginner’s Programming Guide</a>
-  <ul class="collapse">
-  <li><a href="#common-commands" id="toc-common-commands" class="nav-link" data-scroll-target="#common-commands"><span class="header-section-number">4.1</span> Common Commands</a></li>
-  <li><a href="#block-statements" id="toc-block-statements" class="nav-link" data-scroll-target="#block-statements"><span class="header-section-number">4.2</span> Block Statements</a></li>
-  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">4.3</span> Variables</a></li>
-  <li><a href="#logical-statements" id="toc-logical-statements" class="nav-link" data-scroll-target="#logical-statements"><span class="header-section-number">4.4</span> Logical Statements</a></li>
-  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops"><span class="header-section-number">4.5</span> Loops</a></li>
-  <li><a href="#procedures-and-functions" id="toc-procedures-and-functions" class="nav-link" data-scroll-target="#procedures-and-functions"><span class="header-section-number">4.6</span> Procedures and Functions</a></li>
-  </ul></li>
+  <li><a href="#common-commands" id="toc-common-commands" class="nav-link active" data-scroll-target="#common-commands"><span class="header-section-number">3.1</span> Common Commands</a></li>
+  <li><a href="#block-statements" id="toc-block-statements" class="nav-link" data-scroll-target="#block-statements"><span class="header-section-number">3.2</span> Block Statements</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">3.3</span> Variables</a></li>
+  <li><a href="#logical-statements" id="toc-logical-statements" class="nav-link" data-scroll-target="#logical-statements"><span class="header-section-number">3.4</span> Logical Statements</a></li>
+  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops"><span class="header-section-number">3.5</span> Loops</a></li>
+  <li><a href="#procedures-and-functions" id="toc-procedures-and-functions" class="nav-link" data-scroll-target="#procedures-and-functions"><span class="header-section-number">3.6</span> Procedures and Functions</a></li>
   </ul>
 </nav>
     </div>
@@ -241,11 +238,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="oracle-plsql-beginners-programming-guide" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Oracle PL/SQL Beginner’s Programming Guide</h1>
 <p>Oracle is CaSe sensitive! Values stored in the database must be matched exactly. The exception to this is Oracle object names. All objects are stored in upper case, but can be referenced in lower, mixed, or upper case.</p>
-<section id="common-commands" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="common-commands"><span class="header-section-number">4.1</span> Common Commands</h2>
+<section id="common-commands" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="common-commands"><span class="header-section-number">3.1</span> Common Commands</h2>
 <p>There are a bunch of common commands that can be used in Oracle (or that you may see in SQL) . Here are a few:</p>
 <p><strong>DUAL</strong>: Dual is a system table variable. It is used when creating data from scratch in a SQL statement. Oracle requires that all Select statements come from a table or view. This enables you to select data that doesn’t exist in a physical structure.</p>
 <p>example: SELECT ‘Hello World’ as COLUMN_1 from DUAL; SELECT 3 + 4 as RESULT_1 FROM DUAL;</p>
@@ -253,19 +248,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>TRUNC()</strong>: This is a useful function. It will truncate the data element/attribute and return the first part of the data.</p>
 <p>example: TRUNC(SYSDATE) will return only the date and not the time portion TRUNC(12.345) will return the integer portion of the decimal number (i.e.; 12)</p>
 </section>
-<section id="block-statements" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="block-statements"><span class="header-section-number">4.2</span> Block Statements</h2>
+<section id="block-statements" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="block-statements"><span class="header-section-number">3.2</span> Block Statements</h2>
 <p>Block statements are logical groupings of code. There are several types: BEGIN…END; IF…END IF; CASE…END CASE; FOR LOOP…END LOOP; and more.</p>
 <p>Statement Termination All code blocks and single line statements MUST end with the semi-colin “;”.</p>
 </section>
-<section id="variables" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="variables"><span class="header-section-number">4.3</span> Variables</h2>
+<section id="variables" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="variables"><span class="header-section-number">3.3</span> Variables</h2>
 <p>Variables are defined in the DECLARE section of a PL/SQL block. They can also be defined in Functions, Procedures, and Packages. In general, you should avoid using generic variable names like “A”, “X”, “THIS”, “THAT”, etc. Names should be self-documenting in that the name should mean something to the reader. The exception to this is commonly used ones known in the general coding community. Variables should be consistent in term of Case and Naming Standards to avoid confusion.</p>
 <p>Assigning value to a variable is fairly simple. All assignments use the following notation (excluding the quotes): “:=”</p>
 <p>For Example: MY_VARIABLE_EXAMPLE := ‘Hello World!’;</p>
 </section>
-<section id="logical-statements" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="logical-statements"><span class="header-section-number">4.4</span> Logical Statements</h2>
+<section id="logical-statements" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="logical-statements"><span class="header-section-number">3.4</span> Logical Statements</h2>
 <p>Statements that can be evaluated to TRUE/FALSE and what to do in each case.</p>
 <p><strong>IF Statement</strong></p>
 <p>The IF statement is one of the most basic logical constructs of all coding languages. It has the following syntax:</p>
@@ -303,8 +298,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>More information can be found here:</span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  https:<span class="op">//</span>www.oracletutorial.com<span class="op">/</span>plsql<span class="op">-</span>tutorial<span class="op">/</span>plsql<span class="op">-</span><span class="cf">case</span><span class="op">-</span>statement<span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="loops" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="loops"><span class="header-section-number">4.5</span> Loops</h2>
+<section id="loops" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="loops"><span class="header-section-number">3.5</span> Loops</h2>
 <p>Loops are logical structures that allow the process to repeat a block of code until a condition is met and code exists the loop.</p>
 <p><strong>FOR LOOP…END LOOP;</strong> The For Loop is the loop that I have used the most and is very versatile. There is the standard use of the for loop and a more advance use that I use.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>:  <span class="cf">FOR</span> Counter <span class="kw">IN</span> <span class="dv">1</span><span class="op">..</span><span class="dv">20</span> </span>
@@ -340,8 +335,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="https://www.techonthenet.com/oracle/loops/repeat_until.php" class="uri">https://www.techonthenet.com/oracle/loops/repeat_until.php</a></p>
 </blockquote>
 </section>
-<section id="procedures-and-functions" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="procedures-and-functions"><span class="header-section-number">4.6</span> Procedures and Functions</h2>
+<section id="procedures-and-functions" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="procedures-and-functions"><span class="header-section-number">3.6</span> Procedures and Functions</h2>
 <p>Procedures and functions are a set of code that can be called and executed. The primary difference between the two are Functions return a value and Procedures do not.</p>
 <p><strong>Procedure</strong>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">or</span> <span class="kw">replace</span> <span class="kw">PROCEDURE</span> MY_PROC ( PARAM1 <span class="dt">VARCHAR2</span> )</span>
@@ -398,7 +393,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
