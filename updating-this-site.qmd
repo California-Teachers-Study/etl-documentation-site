@@ -25,4 +25,8 @@ More information about quarto books can be found here: <https://quarto.org/docs/
 
 3.  When you are ready to publish, click "Render" at the top of the window of your Quarto document. This will generate the html version of the Quarto document into the "docs" subfolder.
 
+    i.  You can also type "quarto render" into the Terminal to render all documents at once.
+
+    ii. To preview the entire book, type "quarto preview" into the Terminal.
+
 4.  The site is now updated locally. The next step is to commit these changes to git, then push the changes to GitHub. See [the git/Github setup section](rstudio-setup.qmd#To%20add%20new%20files%20to%20a%20git%20repo%20then%20push%20to%20GitHub:) for detailed instructions.
