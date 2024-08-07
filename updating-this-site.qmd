@@ -1,0 +1,28 @@
+---
+title: "Updating this Quarto Site"
+author: "Emma Spielfogel"
+date: "June 18, 2024"
+date-modified: last-modified
+---
+
+This site is developed as a Quarto book.
+
+More information about quarto books can be found here: <https://quarto.org/docs/books>.
+
+## Steps for updating this site:
+
+1.  Create a new Quarto document (.qmd) file containing the information you would like to add
+
+    i.  Name this file something with no spaces---use hyphens instead.
+
+    ii. The easiest way to create a new file is to make a copy of any existing one then change the name---this way the same information will be present at the top of each document.
+
+2.  Open the **\_quarto.yml** file and add the name of this new file under chapters, after whichever existing chapter you would like to go.
+
+    ::: {.callout-important appearance="simple"}
+    ## Make sure the \_quarto.yml file is updated before proceeding, otherwise the site will not render correctly.
+    :::
+
+3.  When you are ready to publish, click "Render" at the top of the window of your Quarto document. This will generate the html version of the Quarto document into the "docs" subfolder.
+
+4.  The site is now updated locally. The next step is to commit these changes to git, then push the changes to GitHub. See [the git/Github setup section](rstudio-setup.qmd#To%20add%20new%20files%20to%20a%20git%20repo%20then%20push%20to%20GitHub:) for detailed instructions.

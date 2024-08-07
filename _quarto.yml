@@ -11,7 +11,9 @@ book:
     logo: "/media/Aplus_A_only_blue.png"
   chapters:
     - index.qmd
+    - updating-this-site.qmd
     - rstudio-setup.qmd
+    - oracle-plsql-beginners-guide.qmd
     - oracle-setup.qmd
     - references.qmd
 

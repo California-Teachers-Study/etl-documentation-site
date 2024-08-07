@@ -9,7 +9,7 @@
 <meta name="author" content="Jerry Gray">
 <meta name="dcterms.date" content="2024-06-18">
 
-<title>CTS ETL Methodology - 2&nbsp; Connecting to Oracle</title>
+<title>CTS ETL Methodology - 4&nbsp; Connecting to Oracle</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,7 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./references.html" rel="next">
-<link href="./rstudio-setup.html" rel="prev">
+<link href="./oracle-plsql-beginners-guide.html" rel="prev">
 <link href=".//media/Aplus_A_only_blue.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -125,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./oracle-setup.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting to Oracle</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./oracle-setup.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Connecting to Oracle</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,14 +153,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./updating-this-site.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Updating this Quarto Site</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./rstudio-setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">RStudio Setup</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio Setup</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./oracle-plsql-beginners-guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Oracle PL/SQL Beginner’s Programming Guide</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./oracle-setup.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting to Oracle</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Connecting to Oracle</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -179,11 +191,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#oracle-account-creation" id="toc-oracle-account-creation" class="nav-link active" data-scroll-target="#oracle-account-creation"><span class="header-section-number">2.1</span> Oracle account creation</a></li>
-  <li><a href="#oracle-sign-in" id="toc-oracle-sign-in" class="nav-link" data-scroll-target="#oracle-sign-in"><span class="header-section-number">2.2</span> Oracle sign-in</a></li>
-  <li><a href="#database-connections" id="toc-database-connections" class="nav-link" data-scroll-target="#database-connections"><span class="header-section-number">2.3</span> Database connections</a></li>
-  <li><a href="#other-specific-steps" id="toc-other-specific-steps" class="nav-link" data-scroll-target="#other-specific-steps"><span class="header-section-number">2.4</span> Other specific steps…</a></li>
-  <li><a href="#embedding-code" id="toc-embedding-code" class="nav-link" data-scroll-target="#embedding-code"><span class="header-section-number">2.5</span> Embedding code</a></li>
+  <li><a href="#oracle-account-creation" id="toc-oracle-account-creation" class="nav-link active" data-scroll-target="#oracle-account-creation"><span class="header-section-number">4.1</span> Oracle account creation</a></li>
+  <li><a href="#oracle-sign-in" id="toc-oracle-sign-in" class="nav-link" data-scroll-target="#oracle-sign-in"><span class="header-section-number">4.2</span> Oracle sign-in</a></li>
+  <li><a href="#database-connections" id="toc-database-connections" class="nav-link" data-scroll-target="#database-connections"><span class="header-section-number">4.3</span> Database connections</a></li>
+  <li><a href="#other-specific-steps" id="toc-other-specific-steps" class="nav-link" data-scroll-target="#other-specific-steps"><span class="header-section-number">4.4</span> Other specific steps…</a></li>
+  <li><a href="#embedding-code" id="toc-embedding-code" class="nav-link" data-scroll-target="#embedding-code"><span class="header-section-number">4.5</span> Embedding code</a></li>
   </ul>
 </nav>
     </div>
@@ -192,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting to Oracle</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Connecting to Oracle</span></h1>
 </div>
 
 
@@ -226,20 +238,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <p>Purpose: This section will describe how to connect RStudio and Oracle.</p>
-<section id="oracle-account-creation" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="oracle-account-creation"><span class="header-section-number">2.1</span> Oracle account creation</h2>
+<section id="oracle-account-creation" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="oracle-account-creation"><span class="header-section-number">4.1</span> Oracle account creation</h2>
 </section>
-<section id="oracle-sign-in" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="oracle-sign-in"><span class="header-section-number">2.2</span> Oracle sign-in</h2>
+<section id="oracle-sign-in" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="oracle-sign-in"><span class="header-section-number">4.2</span> Oracle sign-in</h2>
 </section>
-<section id="database-connections" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="database-connections"><span class="header-section-number">2.3</span> Database connections</h2>
+<section id="database-connections" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="database-connections"><span class="header-section-number">4.3</span> Database connections</h2>
 </section>
-<section id="other-specific-steps" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="other-specific-steps"><span class="header-section-number">2.4</span> Other specific steps…</h2>
+<section id="other-specific-steps" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="other-specific-steps"><span class="header-section-number">4.4</span> Other specific steps…</h2>
 </section>
-<section id="embedding-code" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="embedding-code"><span class="header-section-number">2.5</span> Embedding code</h2>
+<section id="embedding-code" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="embedding-code"><span class="header-section-number">4.5</span> Embedding code</h2>
 <p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
 <div class="cell">
 <details open="">
@@ -497,8 +509,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./rstudio-setup.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">RStudio Setup</span></span>
+      <a href="./oracle-plsql-beginners-guide.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Oracle PL/SQL Beginner’s Programming Guide</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

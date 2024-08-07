@@ -39,12 +39,10 @@ Follow the instructions [here](https://sites.northwestern.edu/researchcomputing/
 -   git push
     -   ~This pushes the committed changes to GitHub.~
 
-::: {.callout-note appearance="simple"}
-**If you have messed up the branches, you can revert (do with mega caution):**
-:::
-
+::: {.callout-note collapse="true" title="If you have messed up the branches, you can revert (do with mega caution):" appearance="minimal"}
 -   git reset --hard {insert commit ID}
 -   git log
 -   git status
 -   git push -f
 -   git status
+:::

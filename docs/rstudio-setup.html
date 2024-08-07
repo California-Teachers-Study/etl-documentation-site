@@ -9,7 +9,7 @@
 <meta name="author" content="Emma Spielfogel">
 <meta name="dcterms.date" content="2024-06-18">
 
-<title>CTS ETL Methodology - 1&nbsp; RStudio Setup</title>
+<title>CTS ETL Methodology - 2&nbsp; RStudio Setup</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./oracle-setup.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./oracle-plsql-beginners-guide.html" rel="next">
+<link href="./updating-this-site.html" rel="prev">
 <link href=".//media/Aplus_A_only_blue.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -91,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rstudio-setup.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">RStudio Setup</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rstudio-setup.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio Setup</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -119,14 +119,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./updating-this-site.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Updating this Quarto Site</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./rstudio-setup.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">RStudio Setup</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio Setup</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./oracle-plsql-beginners-guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Oracle PL/SQL Beginner’s Programming Guide</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./oracle-setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting to Oracle</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Connecting to Oracle</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -145,11 +157,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#using-git-and-github" id="toc-using-git-and-github" class="nav-link active" data-scroll-target="#using-git-and-github"><span class="header-section-number">1.1</span> Using Git and GitHub</a></li>
-  <li><a href="#git-for-command-line" id="toc-git-for-command-line" class="nav-link" data-scroll-target="#git-for-command-line"><span class="header-section-number">1.2</span> Git for Command Line</a>
+  <li><a href="#using-git-and-github" id="toc-using-git-and-github" class="nav-link active" data-scroll-target="#using-git-and-github"><span class="header-section-number">2.1</span> Using Git and GitHub</a></li>
+  <li><a href="#git-for-command-line" id="toc-git-for-command-line" class="nav-link" data-scroll-target="#git-for-command-line"><span class="header-section-number">2.2</span> Git for Command Line</a>
   <ul class="collapse">
-  <li><a href="#to-clone-a-repository-from-github-to-your-rstudio-session" id="toc-to-clone-a-repository-from-github-to-your-rstudio-session" class="nav-link" data-scroll-target="#to-clone-a-repository-from-github-to-your-rstudio-session"><span class="header-section-number">1.2.1</span> To clone a repository from GitHub to your RStudio session:</a></li>
-  <li><a href="#to-add-new-files-to-a-git-repo-then-push-to-github" id="toc-to-add-new-files-to-a-git-repo-then-push-to-github" class="nav-link" data-scroll-target="#to-add-new-files-to-a-git-repo-then-push-to-github"><span class="header-section-number">1.2.2</span> To add new files to a git repo then push to GitHub:</a></li>
+  <li><a href="#to-clone-a-repository-from-github-to-your-rstudio-session" id="toc-to-clone-a-repository-from-github-to-your-rstudio-session" class="nav-link" data-scroll-target="#to-clone-a-repository-from-github-to-your-rstudio-session"><span class="header-section-number">2.2.1</span> To clone a repository from GitHub to your RStudio session:</a></li>
+  <li><a href="#to-add-new-files-to-a-git-repo-then-push-to-github" id="toc-to-add-new-files-to-a-git-repo-then-push-to-github" class="nav-link" data-scroll-target="#to-add-new-files-to-a-git-repo-then-push-to-github"><span class="header-section-number">2.2.2</span> To add new files to a git repo then push to GitHub:</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -159,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">RStudio Setup</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio Setup</span></h1>
 </div>
 
 
@@ -183,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">June 28, 2024</p>
+      <p class="date-modified">August 6, 2024</p>
     </div>
   </div>
     
@@ -193,14 +205,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>Purpose: This section will describe how to set up RStudio for development.</p>
-<section id="using-git-and-github" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="using-git-and-github"><span class="header-section-number">1.1</span> Using Git and GitHub</h2>
+<section id="using-git-and-github" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="using-git-and-github"><span class="header-section-number">2.1</span> Using Git and GitHub</h2>
 <p>Follow the instructions <a href="https://sites.northwestern.edu/researchcomputing/resources/using-git-and-github-with-r-rstudio/">here</a> to set up Git and GitHub. As described in these instructions, using <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">R Studio Projects</a> makes working with Git and GitHub easier.</p>
 </section>
-<section id="git-for-command-line" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="git-for-command-line"><span class="header-section-number">1.2</span> Git for Command Line</h2>
-<section id="to-clone-a-repository-from-github-to-your-rstudio-session" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="to-clone-a-repository-from-github-to-your-rstudio-session"><span class="header-section-number">1.2.1</span> To clone a repository from GitHub to your RStudio session:</h3>
+<section id="git-for-command-line" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="git-for-command-line"><span class="header-section-number">2.2</span> Git for Command Line</h2>
+<section id="to-clone-a-repository-from-github-to-your-rstudio-session" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="to-clone-a-repository-from-github-to-your-rstudio-session"><span class="header-section-number">2.2.1</span> To clone a repository from GitHub to your RStudio session:</h3>
 <ul>
 <li>Copy the link from the GitHub repository you would like to clone
 <ul>
@@ -211,8 +223,8 @@ ul.task-list li input[type="checkbox"] {
 <li>git clone “URL of repository from GitHub”</li>
 </ul>
 </section>
-<section id="to-add-new-files-to-a-git-repo-then-push-to-github" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="to-add-new-files-to-a-git-repo-then-push-to-github"><span class="header-section-number">1.2.2</span> To add new files to a git repo then push to GitHub:</h3>
+<section id="to-add-new-files-to-a-git-repo-then-push-to-github" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="to-add-new-files-to-a-git-repo-then-push-to-github"><span class="header-section-number">2.2.2</span> To add new files to a git repo then push to GitHub:</h3>
 <ul>
 <li>Go the Terminal tab in RStudio</li>
 <li>Open the repository file path if you are not already in the project (use cd in the Terminal to change your directory)</li>
@@ -242,16 +254,18 @@ ul.task-list li input[type="checkbox"] {
 <li><sub>This&nbsp;pushes&nbsp;the&nbsp;committed&nbsp;changes&nbsp;to&nbsp;GitHub.</sub></li>
 </ul></li>
 </ul>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="If you have messed up the branches, you can revert (do with mega caution):">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<p><strong>If you have messed up the branches, you can revert (do with mega caution):</strong></p>
+<div class="callout-title-container flex-fill">
+If you have messed up the branches, you can revert (do with mega caution):
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ul>
 <li>git reset –hard {insert commit ID}</li>
 <li>git log</li>
@@ -259,6 +273,9 @@ ul.task-list li input[type="checkbox"] {
 <li>git push -f</li>
 <li>git status</li>
 </ul>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -500,13 +517,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./updating-this-site.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Updating this Quarto Site</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./oracle-setup.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting to Oracle</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./oracle-plsql-beginners-guide.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Oracle PL/SQL Beginner’s Programming Guide</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

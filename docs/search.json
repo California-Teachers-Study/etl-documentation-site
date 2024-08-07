@@ -7,66 +7,108 @@
     "text": "Preface\nThis is a Quarto book for documenting the CTS’ ETL methodology. This book is currently under development.\nTo learn more about Quarto books visit https://quarto.org/docs/books."
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\nCode\n1 + 1\n\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "objectID": "updating-this-site.html#steps-for-updating-this-site",
+    "href": "updating-this-site.html#steps-for-updating-this-site",
+    "title": "1  Updating this Quarto Site",
+    "section": "1.1 Steps for updating this site:",
+    "text": "1.1 Steps for updating this site:\n\nCreate a new Quarto document (.qmd) file containing the information you would like to add\n\nName this file something with no spaces—use hyphens instead.\nThe easiest way to create a new file is to make a copy of any existing one then change the name—this way the same information will be present at the top of each document.\n\nOpen the _quarto.yml file and add the name of this new file under chapters, after whichever existing chapter you would like to go.\n\n\n\n\n\n\nMake sure the _quarto.yml file is updated before proceeding, otherwise the site will not render correctly.\n\n\n\n\n\n\nWhen you are ready to publish, click “Render” at the top of the window of your Quarto document. This will generate the html version of the Quarto document into the “docs” subfolder.\nThe site is now updated locally. The next step is to commit these changes to git, then push the changes to GitHub. See the git/Github setup section for detailed instructions."
   },
   {
     "objectID": "rstudio-setup.html#using-git-and-github",
     "href": "rstudio-setup.html#using-git-and-github",
-    "title": "1  RStudio Setup",
-    "section": "1.1 Using Git and GitHub",
-    "text": "1.1 Using Git and GitHub\nFollow the instructions here to set up Git and GitHub. As described in these instructions, using R Studio Projects makes working with Git and GitHub easier."
+    "title": "2  RStudio Setup",
+    "section": "2.1 Using Git and GitHub",
+    "text": "2.1 Using Git and GitHub\nFollow the instructions here to set up Git and GitHub. As described in these instructions, using R Studio Projects makes working with Git and GitHub easier."
   },
   {
     "objectID": "rstudio-setup.html#git-for-command-line",
     "href": "rstudio-setup.html#git-for-command-line",
-    "title": "1  RStudio Setup",
-    "section": "1.2 Git for Command Line",
-    "text": "1.2 Git for Command Line\n\n1.2.1 To clone a repository from GitHub to your RStudio session:\n\nCopy the link from the GitHub repository you would like to clone\n\nClick the green “Code” button to see the link\n\nGo the Terminal tab in RStudio\nMake sure you are at the location you want to clone to—if not, change your directory using cd\ngit clone “URL of repository from GitHub”\n\n\n\n1.2.2 To add new files to a git repo then push to GitHub:\n\nGo the Terminal tab in RStudio\nOpen the repository file path if you are not already in the project (use cd in the Terminal to change your directory)\ngit pull\n\nThis will pull the repository your current location in order to ensure you are using the most up-to-date version. This is especially important when working with collaborators who may have made changes since you last pulled or cloned the repository.\n\ngit status\n\nThis allows you to check the status—doing this often is a good check.\n\ngit add + file name\n\nThis adds files to git (not GitHub).\ngit add -u adds anything that is tracked but has changed (the u stands for updated)\n\ngit status\n\nChecking the status again here can be helpful to double-check you have added all files and folders you would like to.\n\ngit commit -m “Commit message”\n\nThis commits the changes you have made. Everything is easily reversible until this step. Once committed, changes are part of the history.\n\ngit push\n\nThis pushes the committed changes to GitHub.\n\n\n\n\n\n\n\n\nIf you have messed up the branches, you can revert (do with mega caution):\n\n\n\n\ngit reset –hard {insert commit ID}\ngit log\ngit status\ngit push -f\ngit status"
+    "title": "2  RStudio Setup",
+    "section": "2.2 Git for Command Line",
+    "text": "2.2 Git for Command Line\n\n2.2.1 To clone a repository from GitHub to your RStudio session:\n\nCopy the link from the GitHub repository you would like to clone\n\nClick the green “Code” button to see the link\n\nGo the Terminal tab in RStudio\nMake sure you are at the location you want to clone to—if not, change your directory using cd\ngit clone “URL of repository from GitHub”\n\n\n\n2.2.2 To add new files to a git repo then push to GitHub:\n\nGo the Terminal tab in RStudio\nOpen the repository file path if you are not already in the project (use cd in the Terminal to change your directory)\ngit pull\n\nThis will pull the repository your current location in order to ensure you are using the most up-to-date version. This is especially important when working with collaborators who may have made changes since you last pulled or cloned the repository.\n\ngit status\n\nThis allows you to check the status—doing this often is a good check.\n\ngit add + file name\n\nThis adds files to git (not GitHub).\ngit add -u adds anything that is tracked but has changed (the u stands for updated)\n\ngit status\n\nChecking the status again here can be helpful to double-check you have added all files and folders you would like to.\n\ngit commit -m “Commit message”\n\nThis commits the changes you have made. Everything is easily reversible until this step. Once committed, changes are part of the history.\n\ngit push\n\nThis pushes the committed changes to GitHub.\n\n\n\n\n\n\n\n\nIf you have messed up the branches, you can revert (do with mega caution):\n\n\n\n\n\n\ngit reset –hard {insert commit ID}\ngit log\ngit status\ngit push -f\ngit status"
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
+    "objectID": "oracle-plsql-beginners-guide.html",
+    "href": "oracle-plsql-beginners-guide.html",
+    "title": "3  Oracle PL/SQL Beginner’s Programming Guide",
     "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "4 Oracle PL/SQL Beginner’s Programming Guide\nOracle is CaSe sensitive! Values stored in the database must be matched exactly. The exception to this is Oracle object names. All objects are stored in upper case, but can be referenced in lower, mixed, or upper case."
+  },
+  {
+    "objectID": "oracle-plsql-beginners-guide.html#common-commands",
+    "href": "oracle-plsql-beginners-guide.html#common-commands",
+    "title": "3  Oracle PL/SQL Beginner’s Programming Guide",
+    "section": "4.1 Common Commands",
+    "text": "4.1 Common Commands\nThere are a bunch of common commands that can be used in Oracle (or that you may see in SQL) . Here are a few:\nDUAL: Dual is a system table variable. It is used when creating data from scratch in a SQL statement. Oracle requires that all Select statements come from a table or view. This enables you to select data that doesn’t exist in a physical structure.\nexample: SELECT ‘Hello World’ as COLUMN_1 from DUAL; SELECT 3 + 4 as RESULT_1 FROM DUAL;\nSYSDATE: SYSDATE is a system variable that will return the date and time of the server. It is a DATE data type.\nTRUNC(): This is a useful function. It will truncate the data element/attribute and return the first part of the data.\nexample: TRUNC(SYSDATE) will return only the date and not the time portion TRUNC(12.345) will return the integer portion of the decimal number (i.e.; 12)"
+  },
+  {
+    "objectID": "oracle-plsql-beginners-guide.html#block-statements",
+    "href": "oracle-plsql-beginners-guide.html#block-statements",
+    "title": "3  Oracle PL/SQL Beginner’s Programming Guide",
+    "section": "4.2 Block Statements",
+    "text": "4.2 Block Statements\nBlock statements are logical groupings of code. There are several types: BEGIN…END; IF…END IF; CASE…END CASE; FOR LOOP…END LOOP; and more.\nStatement Termination All code blocks and single line statements MUST end with the semi-colin “;”."
+  },
+  {
+    "objectID": "oracle-plsql-beginners-guide.html#variables",
+    "href": "oracle-plsql-beginners-guide.html#variables",
+    "title": "3  Oracle PL/SQL Beginner’s Programming Guide",
+    "section": "4.3 Variables",
+    "text": "4.3 Variables\nVariables are defined in the DECLARE section of a PL/SQL block. They can also be defined in Functions, Procedures, and Packages. In general, you should avoid using generic variable names like “A”, “X”, “THIS”, “THAT”, etc. Names should be self-documenting in that the name should mean something to the reader. The exception to this is commonly used ones known in the general coding community. Variables should be consistent in term of Case and Naming Standards to avoid confusion.\nAssigning value to a variable is fairly simple. All assignments use the following notation (excluding the quotes): “:=”\nFor Example: MY_VARIABLE_EXAMPLE := ‘Hello World!’;"
+  },
+  {
+    "objectID": "oracle-plsql-beginners-guide.html#logical-statements",
+    "href": "oracle-plsql-beginners-guide.html#logical-statements",
+    "title": "3  Oracle PL/SQL Beginner’s Programming Guide",
+    "section": "4.4 Logical Statements",
+    "text": "4.4 Logical Statements\nStatements that can be evaluated to TRUE/FALSE and what to do in each case.\nIF Statement\nThe IF statement is one of the most basic logical constructs of all coding languages. It has the following syntax:\n  IF A=B THEN\n     Do something here; \n  ELSE\n      Do something here;\n  END IF;\nThere is also the ELSIF\n  IF A=B THEN\n    Do something here;\n  ELSIF A=C THEN\n    Do something here;\n  ELSE\n    Do something here;\n  END IF;\nMore information can be found here: https://www.techonthenet.com/oracle/loops/if_then.php\nCASE Statement\nYou can use the CASE statement in both a SELECT statement and in PL/SQL code. The syntax for both are the same except for the line termination. In the SELECT statement, no semicolon is used. In the PL/SQL statement, a semi colon is used after each line following the “Then” and at the end of the Case.\nTwo styles:\n  1: CASE MY_VARIABLE \n        WHEN 'A' THEN Do Something;\n        WHEN 'B' THEN Do Something;\n        ELSE Do Something;\n     END CASE;\n\n  2: CASE \n        WHEN MY_VARIABLE = 'A' THEN Do Something;\n        WHEN MY_VARIABLE = 'B' THEN Do Something;\n        WHEN MY_VARIABLE = 'C' and \n             MY_DATE=TRUNC(SYSDATE) THEN Do Something;\n        ELSE Do Something;\n     END CASE;\n\nMore information can be found here:\n  https://www.oracletutorial.com/plsql-tutorial/plsql-case-statement/"
+  },
+  {
+    "objectID": "oracle-plsql-beginners-guide.html#loops",
+    "href": "oracle-plsql-beginners-guide.html#loops",
+    "title": "3  Oracle PL/SQL Beginner’s Programming Guide",
+    "section": "4.5 Loops",
+    "text": "4.5 Loops\nLoops are logical structures that allow the process to repeat a block of code until a condition is met and code exists the loop.\nFOR LOOP…END LOOP; The For Loop is the loop that I have used the most and is very versatile. There is the standard use of the for loop and a more advance use that I use.\n    1:  FOR Counter IN 1..20 \n        Loop\n            Do Something;\n        End Loop;\n\n    2:  FOR MY_DATA IN\n            (\n                SELECT EMPLID, EMPL_NAME, DEPARTMENT, SALARY, HIRE_DATE\n                FROM HR\n                WHERE TO_DATE(HIRE_DATE, 'YYYYMM') = '202306'\n            )\n        LOOP\n            INSERT INTO MONTHLY_REVIEW VALUES (MY_DATA.EMPLID, MYDATA.EMPL_NAME);\n            Do Somehting else;\n        END LOOP;\n\nMore information on Loops can be found here:\nFOR LOOP:\nhttps://www.techonthenet.com/oracle/loops/for_loop.php\nhttps://www.oracletutorial.com/plsql-tutorial/plsql-loop/\nCURSOR FOR Loop:\nhttps://www.techonthenet.com/oracle/loops/cursor_for.php\nhttps://www.oracletutorial.com/plsql-tutorial/plsql-cursor-for-loop/\nLOOP:\nhttps://www.techonthenet.com/oracle/loops/gen_loop.php\nhttps://www.oracletutorial.com/plsql-tutorial/plsql-loop/\nWHILE LOOP:\nhttps://www.techonthenet.com/oracle/loops/while.php\nhttps://www.oracletutorial.com/plsql-tutorial/plsql-while-loop/\nREPEAT UNTIL:\nhttps://www.techonthenet.com/oracle/loops/repeat_until.php"
+  },
+  {
+    "objectID": "oracle-plsql-beginners-guide.html#procedures-and-functions",
+    "href": "oracle-plsql-beginners-guide.html#procedures-and-functions",
+    "title": "3  Oracle PL/SQL Beginner’s Programming Guide",
+    "section": "4.6 Procedures and Functions",
+    "text": "4.6 Procedures and Functions\nProcedures and functions are a set of code that can be called and executed. The primary difference between the two are Functions return a value and Procedures do not.\nProcedure:\ncreate or replace PROCEDURE MY_PROC ( PARAM1 VARCHAR2 )\n\nIS \n  --variable declaration section\n  v_SEQ_NBR NUMBER := 0;\n\nBEGIN\n\n  VALID SQL or PL/SQL;\n\nEND;\nFunctions:\ncreate or replace FUNCTION MY_FUNCTION ( PARAM1 NUMBER, PARAM2 VARCHAR2 ) RETURN VARCHAR\n\nIS\n  --variable declaration section\n  PRAGMA AUTONOMOUS_TRANSACTION; --Allows for multiple types of actions to occur or be called\n\n  VARIABLE_LIST   VARCHAR2(50) := ''; --VARCHAR varibles must have a length declared\n                                      --the := '' defines the default value of the variable. it is not required\n\n  exceptionvar    EXCEPTION;\n\n\n  --IF CURSOR IS USED\n  CURSOR C1 IS\n      SELECT *\n      FROM MY_TABLE\n      WHERE MY_COLUMN = PARAM1;\n\nBEGIN \n  VALID SQL or PL/SQL;\n  RETURN '0';\n\n------------------------------------------------------------------------\n\n  EXCEPTION\n  WHEN exceptionvar THEN return 'something';\n\nEND;\nIn both examples, Parameters are not required. If not needed, omit the section “(..)” completely. Also, if variables are not needed, you can omit them. Cursors are defined in the variable section.\nFor more information on Procedures and Functions go here:\nProcedures:\n\nhttps://www.techonthenet.com/oracle/procedures.php\nhttps://www.oracletutorial.com/plsql-tutorial/plsql-procedure/\n\nFunctions:\n\nhttps://www.techonthenet.com/oracle/functions.php\nhttps://www.oracletutorial.com/plsql-tutorial/plsql-function/"
   },
   {
     "objectID": "oracle-setup.html#oracle-account-creation",
     "href": "oracle-setup.html#oracle-account-creation",
-    "title": "2  Connecting to Oracle",
-    "section": "2.1 Oracle account creation",
-    "text": "2.1 Oracle account creation"
+    "title": "4  Connecting to Oracle",
+    "section": "4.1 Oracle account creation",
+    "text": "4.1 Oracle account creation"
   },
   {
     "objectID": "oracle-setup.html#oracle-sign-in",
     "href": "oracle-setup.html#oracle-sign-in",
-    "title": "2  Connecting to Oracle",
-    "section": "2.2 Oracle sign-in",
-    "text": "2.2 Oracle sign-in"
+    "title": "4  Connecting to Oracle",
+    "section": "4.2 Oracle sign-in",
+    "text": "4.2 Oracle sign-in"
   },
   {
     "objectID": "oracle-setup.html#database-connections",
     "href": "oracle-setup.html#database-connections",
-    "title": "2  Connecting to Oracle",
-    "section": "2.3 Database connections",
-    "text": "2.3 Database connections"
+    "title": "4  Connecting to Oracle",
+    "section": "4.3 Database connections",
+    "text": "4.3 Database connections"
   },
   {
     "objectID": "oracle-setup.html#other-specific-steps",
     "href": "oracle-setup.html#other-specific-steps",
-    "title": "2  Connecting to Oracle",
-    "section": "2.4 Other specific steps…",
-    "text": "2.4 Other specific steps…"
+    "title": "4  Connecting to Oracle",
+    "section": "4.4 Other specific steps…",
+    "text": "4.4 Other specific steps…"
   },
   {
     "objectID": "oracle-setup.html#embedding-code",
     "href": "oracle-setup.html#embedding-code",
-    "title": "2  Connecting to Oracle",
-    "section": "2.5 Embedding code",
-    "text": "2.5 Embedding code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\nCode\n1 + 1\n\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "title": "4  Connecting to Oracle",
+    "section": "4.5 Embedding code",
+    "text": "4.5 Embedding code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\nCode\n1 + 1\n\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
   }
 ]
